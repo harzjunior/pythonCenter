@@ -31,9 +31,11 @@ class GameOfLife:
     def create_glider(self, board):
         board[0][1] = 1
         board[1][2] = 1
+        board[2][3] = 1
         board[2][0] = 1
-        board[2][1] = 1
-        board[2][2] = 1
+        board[3][1] = 1
+        board[3][2] = 1
+        board[3][3] = 1
 
     # create a random board
     def create_random_board(self, board):
@@ -47,9 +49,9 @@ class GameOfLife:
             for x in range(self.width):
                 # render 1 as x and 0 as a space
                 if board[x][y] == 1:
-                    print("x", end="")
+                    print("*", end="")
                 else:
-                    print(" ", end="")
+                    print(".", end="")
             print()
 
     # count the neighbors
@@ -91,7 +93,7 @@ class GameOfLife:
 
 
             # create the game
-game = GameOfLife(10, 10)
+game = GameOfLife(100, 10)
 
 # run the game
 game.run()
