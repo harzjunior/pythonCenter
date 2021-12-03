@@ -49,9 +49,11 @@ class GameOfLife:
             for x in range(self.width):
                 # render 1 as x and 0 as a space
                 if board[x][y] == 1:
-                    print("*", end="")
+                    #life
+                    print("😃", end="")
                 else:
-                    print(".", end="")
+                    #dead
+                    print("🗿", end="")
             print()
 
     # count the neighbors
@@ -93,7 +95,7 @@ class GameOfLife:
 
 
             # create the game
-game = GameOfLife(100, 10)
+game = GameOfLife(10, 10)
 
 # run the game
 game.run()

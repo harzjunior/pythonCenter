@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Correctness</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+    td:hover{background-color:red;;cursor: pointer}
+    .selected{background-color: red;color: #fff;font-weight: bold}
+</style><script type="text/javascript" src="main.js"></script>
+<body class="w3-light-grey">
+    <table><tbody>
+        <tr style="background-color: red">
+            <td>Donna</td>
+            <td>2016-10-01</td>
+            <td></td>
+        </tr>
+        <tr style="background-color: red">
+            <td>Nansen</td>
+            <td>2016-11-05</td>
+            <td>2016-11-14</td>
+        </tr>
+        <tr style="background-color: red">
+            <td>Peppe</td>
+            <td>2016-11-05</td>
+            <td>2016-11-14</td>
+        </tr>
+        <tr>
+            <td>J'Sira</td>
+            <td>2012-02-28</td>
+            <td>2012-03-14</td>
+        </tr>
+        <tr>
+            <td>Billie</td>
+            <td>2015-08-14</td>
+            <td>2015-10-09</td>
+        </tr>
+        <tr>
+            <td>Peyton</td>
+            <td>2015-08-14</td>
+            <td>2015-10-09</td>
+        </tr>
+    </tbody></table>
+    <script>
+    
+var table = document.getElementById("table"),rIndex,cIndex;
+            
+            // table rows
+            for(var i = 1; i < table.rows.length; i++)
+            {
+                // row cells
+                for(var j = 0; j < table.rows[i].cells.length; j++)
+                {
+                    table.rows[i].cells[j].onclick = function()
+                    {
+                        rIndex = this.parentElement.rowIndex;
+                        cIndex = this.cellIndex+1;
+                        console.log("Row : "+rIndex+" , Cell : "+cIndex);
+                    };
+                }
+            }        
+            </script>
+</body>
+</html>
